@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #fcfcf9;
+  --color-teal-500: #21808d;
+  --color-teal-600: #1a6a75;
+  --color-slate-900: #13343b;
+  --font-manrope: "Manrope", sans-serif;
+}
+
+:root {
+  background-color: var(--color-cream-50);
+  color: var(--color-slate-900);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* Custom Premium Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-in {
+  animation-duration: 400ms;
+  animation-fill-mode: both;
+}
+
+.fade-in { animation-name: fadeIn; }
+.slide-in-from-top-4 { animation-name: slideInFromTop; }
+.zoom-in { animation-name: zoomIn; }
+
+/* Readability & Contrast Refinements */
+body {
+  @apply text-slate-900 antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply text-slate-900 font-bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope);
+  font-weight: 600;
+}
+
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  overflow: hidden;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-primary {
+  background-color: var(--color-teal-500);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-teal-600);
+}
