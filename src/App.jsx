@@ -11,7 +11,7 @@ import Ledger from './pages/admin/Ledger'
 function App() {
   return (
     <MaintenanceProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/admin" element={<AdminLayout><Dashboard /></AdminLayout>} />
           <Route path="/admin/configurator" element={<AdminLayout><Configurator /></AdminLayout>} />
